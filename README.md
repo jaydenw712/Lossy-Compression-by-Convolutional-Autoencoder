@@ -2,26 +2,103 @@
 
 ## Project Overview
 
-This project implements lossy image compression using convolutional autoencoders. By leveraging deep learning techniques, we can achieve significant compression rates while maintaining visual quality.
+This project implements lossy image compression using convolutional autoencoders. By leveraging deep learning techniques, we achieve significant compression rates while maintaining visual quality, demonstrating the potential of neural networks for image compression.
 
 ## Introduction
 
-Image compression is essential for efficient storage and transmission of visual data. This repository demonstrates how convolutional neural networks can be used to create compact representations of images through an encoder-decoder architecture.
+Image compression is essential for efficient storage and transmission of visual data. This repository demonstrates how convolutional neural networks can be used to create compact representations of images through an encoder-decoder architecture, providing an alternative to traditional compression algorithms.
 
-## Features
+## Models
 
-- Convolutional autoencoder for image compression
-- Customizable compression rates
-- Quantitative evaluation of compression performance
-- Visual comparison between original and reconstructed images
+The project implements two convolutional autoencoder architectures:
 
-## Structure
+### Model 1: Baseline Autoencoder
 
-The project is divided into three main subsets:
+Our baseline model uses a standard convolutional architecture with the following components:
 
-1. **Model Architecture** - Implementation of the convolutional autoencoder
-2. **Training Pipeline** - Code for training the model on image datasets
-3. **Evaluation Framework** - Tools to measure compression performance and quality
+- Convolutional layers with Batch Normalization
+- ReLU activation functions
+- MaxPooling for downsampling
+- A bottleneck layer for compression
+
+![Baseline Architecture](model1.jpg)
+
+### Model 2: Enhanced Autoencoder
+
+The enhanced model builds upon the baseline with additional improvements:
+
+- Skip connections between encoder and decoder
+- Additional convolutional layers
+- More sophisticated upsampling techniques
+- Better regularization strategies
+
+![Enhanced Architecture](model2.jpg)
+
+Both models are trained to minimize reconstruction loss while maximizing compression efficiency.
+
+## Results
+
+### Visual Reconstruction Quality
+
+#### Reconstruction Evolution Over Training Epochs
+
+The image below shows how reconstruction quality improves over training epochs for both models:
+
+![Reconstruction Evolution](recon_over_epochs.png)
+_Reconstruction quality improvement over training epochs for both baseline (top) and enhanced (bottom) models_
+
+#### Original vs Reconstructed Comparison
+
+Our experiments show clear visual differences between original images and their reconstructions:
+
+![Original vs Reconstructed Comparison](orig_recon_diff.png)
+_From top to bottom: Original images, Baseline reconstructions, Enhanced reconstructions, Difference maps (Enhanced - Baseline)_
+
+The enhanced model consistently produces reconstructions with better detail preservation, particularly in areas with fine textures and subtle color gradients.
+
+### Training Performance
+
+The training and validation loss curves demonstrate the learning progress of both models:
+
+![Training and Validation Loss](train_test_loss.png)
+_Training and validation loss for both models over 20 epochs_
+
+Key observations:
+
+- Both models converge after approximately 10-15 epochs
+- The enhanced model achieves lower initial loss values
+- The enhanced model exhibits better generalization with smaller gaps between training and validation loss
+- Final MSE loss values are below 0.01 for both models, with the enhanced model achieving slightly better results
+
+## How to Use This Repository
+
+To explore these results yourself:
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/jaydenw712/Lossy-Compression-by-Convolutional-Autoencoder.git
+cd Lossy-Compression-by-Convolutional-Autoencoder
+```
+
+2. Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the Jupyter notebooks:
+   - `CAE128.ipynb` - Baseline model implementation and training
+   - `CAE128_with_step.ipynb` - Enhanced model with skip connections
+   - `CAE128_eval.ipynb` - Evaluation and visualization of results
+
+## Project Structure
+
+- `model_weights_CAE128.pth` - Trained weights for the baseline model
+- `model_weights_CAE128_with_step.pth` - Trained weights for the enhanced model
+- `subset_1.npy`, `subset_2.npy`, `subset_3.npy` - Data subsets used for training and evaluation
+- `training_logs.csv` - Detailed training metrics
+- `report.pdf` - Comprehensive project report and analysis
 
 ## Requirements
 
@@ -30,14 +107,14 @@ The project is divided into three main subsets:
 - NumPy
 - Matplotlib
 - Pillow
+- Jupyter
 
-## Usage
+## Future Work
 
-Detailed usage instructions and examples will be added soon.
-
-## Results
-
-Performance metrics and visual examples will be provided in this section.
+- Implementing variable compression rates
+- Further optimizing the latent space representation
+- Exploring perceptual loss functions
+- Benchmarking against traditional compression algorithms
 
 ## License
 
