@@ -21,7 +21,7 @@ Our baseline model uses a standard convolutional architecture with the following
 - MaxPooling for downsampling
 - A bottleneck layer for compression
 
-![Baseline Architecture](model1.jpg)
+![Baseline Architecture](/assests/model1.jpg)
 
 ### Model 2: Enhanced Autoencoder
 
@@ -32,7 +32,7 @@ The enhanced model builds upon the baseline with additional improvements:
 - More sophisticated upsampling techniques
 - Better regularization strategies
 
-![Enhanced Architecture](model2.jpg)
+![Enhanced Architecture](/assests/model2.jpg)
 
 Both models are trained to minimize reconstruction loss while maximizing compression efficiency.
 
@@ -44,14 +44,14 @@ Both models are trained to minimize reconstruction loss while maximizing compres
 
 The image below shows how reconstruction quality improves over training epochs for both models:
 
-![Reconstruction Evolution](recon_over_epochs.png)
+![Reconstruction Evolution](/assests/recon_over_epochs.png)
 _Reconstruction quality improvement over training epochs for both baseline (top) and enhanced (bottom) models_
 
 #### Original vs Reconstructed Comparison
 
 Our experiments show clear visual differences between original images and their reconstructions:
 
-![Original vs Reconstructed Comparison](orig_recon_diff.png)
+![Original vs Reconstructed Comparison](/assests/orig_recon_diff.png)
 _From top to bottom: Original images, Baseline reconstructions, Enhanced reconstructions, Difference maps (Enhanced - Baseline)_
 
 The enhanced model consistently produces reconstructions with better detail preservation, particularly in areas with fine textures and subtle color gradients.
@@ -60,7 +60,7 @@ The enhanced model consistently produces reconstructions with better detail pres
 
 The training and validation loss curves demonstrate the learning progress of both models:
 
-![Training and Validation Loss](train_test_loss.png)
+![Training and Validation Loss](/assests/train_test_loss.png)
 _Training and validation loss for both models over 20 epochs_
 
 Key observations:
