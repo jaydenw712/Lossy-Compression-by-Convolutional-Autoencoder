@@ -87,18 +87,7 @@ cd Lossy-Compression-by-Convolutional-Autoencoder
 pip install -r requirements.txt
 ```
 
-3. Run the Jupyter notebooks:
-   - `CAE128.ipynb` - Baseline model implementation and training
-   - `CAE128_with_step.ipynb` - Enhanced model with skip connections
-   - `CAE128_eval.ipynb` - Evaluation and visualization of results
-
-## Project Structure
-
-- `model_weights_CAE128.pth` - Trained weights for the baseline model
-- `model_weights_CAE128_with_step.pth` - Trained weights for the enhanced model
-- `subset_1.npy`, `subset_2.npy`, `subset_3.npy` - Data subsets used for training and evaluation
-- `training_logs.csv` - Detailed training metrics
-- `report.pdf` - Comprehensive project report and analysis
+3. Run the Jupyter Notebook!
 
 ## Requirements
 
@@ -108,13 +97,6 @@ pip install -r requirements.txt
 - Matplotlib
 - Pillow
 - Jupyter
-
-## Future Work
-
-- Implementing variable compression rates
-- Further optimizing the latent space representation
-- Exploring perceptual loss functions
-- Benchmarking against traditional compression algorithms
 
 ## License
 
